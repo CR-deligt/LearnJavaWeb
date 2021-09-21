@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_CN">
 <head>
     <meta charset="UTF-8">
     <title>使用表单</title>
@@ -11,7 +11,27 @@
 <!--type = radio是单选框(用name分过组之后就会限制只能选一个)-->
 <!--type = checkbox 是复选框 （也可以加checked默认）-->
 <!--select是下拉列表框，option是列表框的选项 通过selected="selected"默认选中-->
-    <form>
+    <form action="http://localhost:8080" method="get">
+        <!--表单提交标签
+            action=“URL” (链接服务器)
+            method设置提交的方式GET（默认）或POST
+
+            提交时数据没有发送给服务器的三种情况：
+            1.表单项没有name属性
+            2.单选、复选、下拉列表的option标签都没添加value
+            3.表单项不在提交的form中（写出去了）
+            method:
+                Get:
+                    1.浏览器地址栏地址是：action属性值[+?+请求的参数]
+                    请求参数格式是：name=value&name=value
+                    2.不安全
+                    3.有数据长度限制100个字符
+                 POST：
+            1、浏览器地址栏中只有action属性值
+            2、相对于GET请求要安全
+            3、理论上没有数据长度的限制
+            -->
+        <input type="hidden" name="action" value="login"/><!--隐藏域 用户看不见，提交时也会提交-->
         <h1 align="center">用户注册</h1><!--1级标题-->
         <table align="center">
             <tr>
@@ -37,8 +57,8 @@
                 <!--type=radio是单选框(用name分过组之后就会限制只能选一个)-->
                 <!--checked="checked"是默认选项-->
                 <td>
-                    <input type="radio" name="sex" checked="checked"/>男
-                    <input type="radio" name="sex"/>女<br/>
+                    <input type="radio" name="sex" checked="checked" value="boy"/>男
+                    <input type="radio" name="sex" value="girl"/>女<br/>
                 </td>
             </tr>
             <tr>
@@ -69,9 +89,6 @@
             </tr>
             <tr>
                 <td><input type="file"/><!--用于上传文件--></td>
-            </tr>
-            <tr>
-                <td><input type="hidden"/><!--隐藏域 用户看不见，提交时也会提交--></td>
             </tr>
         </table>
     </form>
