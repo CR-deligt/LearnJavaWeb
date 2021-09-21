@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用表单</title>
+</head>
+<body>
+<!--form标签是表单-->
+<!--为了工整把每一项都放到表格中-->
+<!--type="password"是密码输入框-->
+<!--type = radio是单选框(用name分过组之后就会限制只能选一个)-->
+<!--type = checkbox 是复选框 （也可以加checked默认）-->
+<!--select是下拉列表框，option是列表框的选项 通过selected="selected"默认选中-->
+    <form>
+        <h1 align="center">用户注册</h1><!--1级标题-->
+        <table align="center">
+            <tr>
+                <td><input type="reset" value="重置"/><!--全部重置--></td>
+                <td align="right"><input type="submit" /><br/><!--提交按钮--></td>
+            </tr>
+            <tr>
+                <td>用户名称:</td>
+                <td>
+                    <input type="text" value="这是默认值"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>用户密码：</td>
+                <td><input type="password"/><br/><!--type="password"是密码输入框--></td>
+            </tr>
+            <tr>
+                <td>确认密码：</td>
+                <td><input type="password"/><br/></td>
+            </tr>
+            <tr>
+                <td>性别：</td>
+                <!--type=radio是单选框(用name分过组之后就会限制只能选一个)-->
+                <!--checked="checked"是默认选项-->
+                <td>
+                    <input type="radio" name="sex" checked="checked"/>男
+                    <input type="radio" name="sex"/>女<br/>
+                </td>
+            </tr>
+            <tr>
+                <td>兴趣爱好：</td>
+                <!--type = checkbox 是复选框 （也可以加checked默认）-->
+                <td>
+                    <input type="checkbox"/>JAVA
+                    <input type="checkbox"/>Python
+                    <input type="checkbox"/>C<br/>
+                </td>
+            </tr>
+            <tr>
+                <td>国籍：</td>
+                <td>
+                    <select><!--select是下拉列表框，option是列表框的选项 通过selected="selected"默认选中-->
+                        <option>--请选择国籍--</option>
+                        <option selected="selected">中国</option>
+                        <option>外国</option>
+                    </select><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>自我评价：</td>
+                <!--textarea是多行文本输入框 几行 每行可以显示多少字符 （标签之间的内容才是默认值）-->
+                <td>
+                    <textarea rows="5" cols="20">这里都是默认值</textarea><br/>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="file"/><!--用于上传文件--></td>
+            </tr>
+            <tr>
+                <td><input type="hidden"/><!--隐藏域 用户看不见，提交时也会提交--></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

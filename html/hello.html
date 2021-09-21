@@ -2,11 +2,11 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>输入标题</title>
+    <title>这里输入标题</title>
 </head>
 <body>
-    <!--这样写注释-->
-    这里写文本：hello
+    <!--这样写注释（选中ctrl+shift+/）-->
+    这里写文本：hello<br/>
     <!--img图片标签-->
     <!--
         src  设置文本路径
@@ -20,7 +20,76 @@
         ..  当前所在文件夹上级目录
         文件夹名   当前文件所在文件夹的文件
     -->
-    <img src="../imgs/dibala.jpg" width="200" height="120" border="10"/>
+    <img src="../imgs/dibala.jpg" width="200" height="120" border="10"/><br/>
+    表格<br/>
+    <table align="center" border="1" width="300" height="300" cellspacing="4"><!--表格标签 对其方式 边框 宽度 高度 单元格间距-->
+    <tr><!--表示一行-->
+        <td align="center"><b>1.1</b></td><!--表示一个单元格-->
+        <!--align设置单元格文本对其方式，在单元格指的单元格内元素，在表头的地方指的是整个表在页面内的对其状况-->
+        <th>1.2</th><!--表示一个表头-->
+        <th>1.3</th>
+    </tr>
+    <tr>
+        <td>2.1</td>
+        <td>2.2</td>
+        <td>2.3</td>
+    </tr>
+    <tr>
+        <td>3.1</td>
+        <td>3.2</td>
+        <td>3.3</td>
+    </tr>
+    </table>
+    跨行列的表格
+    <table width="500" height="500" border="1" cellspacing="0">
+        <tr>
+            <td colspan="2">1.1</td>
+            <!--colspan表示属性设置跨列-->
+            <td>1.3</td>
+            <td>1.4</td>
+            <td>1.5</td>
+        </tr>
+        <tr>
+            <td rowspan="2">2.1</td>
+            <!--roespan表示属性设置跨行-->
+            <td>2.2</td>
+            <td>2.3</td>
+            <td>2.4</td>
+            <td>2.5</td>
+        </tr>
+        <tr>
+            <td>3.2</td>
+            <td>3.3</td>
+            <td>3.4</td>
+            <td>3.5</td>
+        </tr>
+        <tr>
+            <td>4.1</td>
+            <td>4.2</td>
+            <td>4.3</td>
+            <td colspan="2" rowspan="2">4.4</td>
+        </tr>
+        <tr>
+            <td>5.1</td>
+            <td>5.2</td>
+            <td>5.3</td>
+        </tr>
+    </table>
+超链接
+    <ul>
+        <li><a href="hello.html" target="_blank">hello.html</a></li>
+        <!--标签a加超链接-->
+        <!--target是新标签页显示位置
+            _blank开新标签页
+            _self在自身这个标签页（默认）
+        -->
+        <li><a href="hello.html" target="_self">hello.html</a></li>
+        <li><a href="http://www.baidu.com">baidu </a></li>
+    </ul>
+iframe是在页面上开辟一个区域显示一个单独的页面<br/>
+    <iframe src="hello.html" width="500" height="500" name="aaa"></iframe>
+    <li><a href="http://www.baidu.com" target="aaa">baidu </a></li>
+    <!--可以将超链接的target设置成iframe的窗口-->
 
 </body>
 </html>
