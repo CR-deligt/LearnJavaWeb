@@ -68,7 +68,58 @@
             passwordObj.onblur = function () {
                 console.log("动态注册失去焦点事件");
             }
+      }
+    //<!--静态注册onchange事件-->
+    function onchangeFun(){
+        alert("女神已变");
+    }
+    //<!--动态注册onchange事件-->
+    window.onload = function (){
+        alert("动态注册的onload事件");
+        var btnObj = document.getElementById("btn02");
+        btnObj.onclick = function () {
+            alert("动态注册的onclick事件");
         }
+        var passwordObj = document.getElementById("password");
+        passwordObj.onblur = function () {
+            console.log("动态注册失去焦点事件");
+        }
+        var selObj = document.getElementById("sel01");
+        selObj.onchange = function (){
+            alert("男神已变");
+        }
+    }
+    // 静态注册表单提交事务
+    function onsubmitFun(){
+        // 要验证所有表单项是否合法，如果，有一个不合法就阻止表单提交
+        alert("静态注册表单提交事件----发现不合法");
+
+        return flase;
+    }
+    window.onload = function () {
+        //1 获取标签对象
+        var formObj = document.getElementById("form01");
+        //2 通过标签对象.事件名 = function(){}
+        formObj.onsubmit = function () {
+            alert("动态注册的onload事件");
+            var btnObj = document.getElementById("btn02");
+            btnObj.onclick = function () {
+                alert("动态注册的onclick事件");
+            }
+            var passwordObj = document.getElementById("password");
+            passwordObj.onblur = function () {
+                console.log("动态注册失去焦点事件");
+            }
+            var selObj = document.getElementById("sel01");
+            selObj.onchange = function (){
+                alert("男神已变");
+            }
+            // 要验证所有表单项是否合法，如果，有一个不合法就阻止表单提交
+            alert("动态注册表单提交事件----发现不合法");
+
+            return false;
+        }
+    }
     </script>
 </head>
 <!--静态注册onload事件
@@ -80,8 +131,32 @@
     <button onclick="onclickFun();">按钮1</button>
     <!--动态注册onClick事件-->
     <button id="btn02">按钮2</button><br/>
-
+    <!--onblur事件-->
     用户名:<input type="text" onblur="onblurFun();"><br/><!--只是两个输入框，<form>会有提交链接到服务器的功能和方法-->
     密码:<input id="password" type="text" ><br/>
+    <!--onchange事件-->
+    请选择女神<br/>
+    <select onchange="onchangeFun()">
+        <!--静态注册onchange事件-->
+        <option>--女神--</option>
+        <option>aa</option>
+        <option>bb</option>
+        <option>cc</option>
+    </select><br/>
+    请选择男神<br/>
+    <select id="sel01">
+        <!--动态注册onchange事件-->
+        <option>--男神--</option>
+        <option>aa</option>
+        <option>bb</option>
+        <option>cc</option>
+    </select><br/>
+    <!--return false 可以阻止 表单提交 -->
+    <form action="http://localhost:8080" method="get" onsubmit="return onsubmitFun();">
+        <input type="submit" value="静态注册"/>
+    </form>
+    <form action="http://localhost:8080" id="form01">
+        <input type="submit" value="动态注册"/>
+    </form>
 </body>
 </html>
