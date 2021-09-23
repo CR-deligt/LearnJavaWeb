@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS事件</title>
+    <script type="text/javascript">
+        //事件是电脑输入设备与页面进行交互的响应
+      //常用的事件:
+//       onload加载完成事件
+//       页面加载完成之后,常用于做页面js代码初始化操作
+//       onclick单击事件
+//       常用于按钮的点击响应操作
+//       onblur失去焦点事件
+//       常用于输入框失去焦点后验证其输入内客是否合法。
+//       onchange内容发生改变事件:
+//       常用于下拉列表和输入框内容发生改变后操乍
+//       onsubmit表单提交事件
+//       常用于表单提交前,验证所有表单项是否合法
+      //onload事件方法
+      function onloadFun(){
+          alert('静态注册onload事件......所有代码')
+      }
+      // onload事件动态注册。是固定写法
+      window.onload = function () {
+          alert("动态注册的onload事件");
+      }
+      //onclick事件方法
+      function onclickFun() {
+          alert("静态注册onclick事件");
+      }
+      // 动态注册onclick事件
+      window.onload = function () {//会覆盖上一个onload动态注册，所以写一起
+          alert("动态注册的onload事件");
+          // 1 获取标签对象
+          var btnObj = document.getElementById("btn02");
+          // 2 通过标签对象.事件名 = function(){}
+          btnObj.onclick = function () {
+              alert("动态注册的onclick事件");
+          }
+          /*
+          * document 是JavaScript语言提供的一个对象（文档）<br/>
+          * get           获取
+          * Element       元素（就是标签）
+          * By            通过。。   由。。经。。。
+          * Id            id属性
+          *
+          * getElementById通过id属性获取标签对象
+          **/
+      }
+        // 静态注册onblur事件
+        function onblurFun() {
+            // console是控制台对象，是由JavaScript语言提供，专门用来向浏览器的控制台打印输出， 用于测试使用
+            // log() 是打印的方法
+            console.log("静态注册失去焦点事件");//F12查看浏览器控制台
+        }
+
+        // 动态注册 onblur事件
+        window.onload = function () {
+            alert("动态注册的onload事件");
+            var btnObj = document.getElementById("btn02");
+            btnObj.onclick = function () {
+                alert("动态注册的onclick事件");
+            }
+            //1 获取标签对象
+            var passwordObj = document.getElementById("password");
+            // alert(passwordObj);
+            //2 通过标签对象.事件名 = function(){};
+            passwordObj.onblur = function () {
+                console.log("动态注册失去焦点事件");
+            }
+        }
+    </script>
+</head>
+<!--静态注册onload事件
+    <body onload="onloadFun()">-->
+
+
+<body>
+    <!--静态注册onClick事件-->
+    <button onclick="onclickFun();">按钮1</button>
+    <!--动态注册onClick事件-->
+    <button id="btn02">按钮2</button><br/>
+
+    用户名:<input type="text" onblur="onblurFun();"><br/><!--只是两个输入框，<form>会有提交链接到服务器的功能和方法-->
+    密码:<input id="password" type="text" ><br/>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      <script type="text/javascript">
+        //------------函数的定义--------------
+
+        //JS中不存在函数重载（同名函数参数不同或是类型顺序不同等），同名函数会覆盖掉上一个
+        //因为在function中有一个arguments隐形参数，是一个可变长参数（其实是个数组）
+        // 需求：要求 编写 一个函数。用于计算所有参数相加的和并返回
+        function sum(num1,num2) {
+            var result = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                if (typeof(arguments[i]) == "number") {//不加这个条件结果是10abc56789
+                    result += arguments[i];
+                }
+            }
+            return result;//45
+        }
+
+        alert( sum(1,2,3,4,"abc",5,6,7,8,9) );
+
+        //Method 1
+            //function 函数名(形参列表){}
+            //函数定义
+            function fun(){
+              alert("调用无参函数");
+            }
+            function fun2(a,b){//不用限制参数类型
+              alert("有参调用 a="+a+" ,b="+b);
+            }
+            function fun3(num1,num2) {//若要定义带返回值的，直接在函数体内写return即可
+              var result = num1+num2;
+              return result;
+            }
+            //函数调用
+            fun();
+            fun2(12,"abc");
+            alert(fun3(12,"a"));
+        //Method 2
+            //var 函数名 = function(形参列表){}
+            var fun4 = function () {
+              alert("无参2");
+            }
+            var fun5 = function (a,b){
+              return a+b;
+            }
+            fun4();
+            alert(fun5(10,20));
+
+      </script>
+</head>
+<body>
+
+</body>
+</html>
