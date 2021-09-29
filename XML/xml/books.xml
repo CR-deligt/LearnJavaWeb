@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    文件声明
+    version 是xml版本
+    encoding 是文件编码
+-->
+<!--必须要有根标签（没有父标签）-->
+<books><!--表示多个图书信息-->
+    <book sn="SN11111111111"><!--表示一本书的信息  sn是图书序列号-->
+        <name>时间简史</name><!--name 表示书名-->
+        <author>霍金</author><!--表示作者-->
+        <price>75.00</price>
+    </book>
+    <book sn="SN11111111112"><!--表示一本书的信息  sn是图书序列号-->
+        <name>
+            <![CDATA[
+            AAAAAA
+            ]]><!--文本区（特殊符号直接显示）-->
+        </name><!--name 表示书名-->
+        <author>AA</author><!--表示作者-->
+        <price>12.00</price>
+    </book><!--对大小写敏感-->
+    <book sn="SN11111111113" name="BBBB" author="BB" price="9.90"/><!--也支持单标签-->
+</books>
