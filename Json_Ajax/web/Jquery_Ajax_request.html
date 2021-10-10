@@ -57,7 +57,7 @@
 
 				// ajax请求
 				$("#submit").click(function(){
-					// 把参数序列化
+					// 把参数序列化-----------！注意：要把需要的数据一起传过去
 					// $("#form01").serialize();
 					$.getJSON("http://localhost:8080/Jason_Ajax/ajaxServlet","action=jQuerySerialize&"+$("#form01").serialize(),function (data){
 						$("#msg").html("jQuerySerialize 编号："+data.id+"姓名："+data.name)})
